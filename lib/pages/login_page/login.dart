@@ -16,12 +16,26 @@ class Login extends StatelessWidget {
                   child: SingleChildScrollView(
                     child: Center(
                       child: Container(
-                        width: ScreenUtil().setWidth(300.0),
-                        height: ScreenUtil().setHeight(300.0),
-                        color: Colors.white,
+                        width: ScreenUtil().setWidth(600.0),
+                        height: ScreenUtil().setHeight(900.0),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(color: Colors.white),
+                          borderRadius: BorderRadius.circular(10.0),
+                          // borderRadius: BorderRadius.circular(10.0),
+                        ),
                         child: Column(
                           children: <Widget>[
-                            Text('123')
+                            TextField(
+                              decoration: InputDecoration(
+                                  hintText: "请输入用户名", icon: Icon(Icons.person)),
+                            ),
+                            Padding(padding: EdgeInsets.all(10.0),),
+                            TextField(
+                              decoration: InputDecoration(
+                                hintText: "请输入密码",icon: Icon(Icons.person)
+                              ),
+                            )
                           ],
                         ),
                       ),
