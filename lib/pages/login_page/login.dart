@@ -1,3 +1,4 @@
+import 'package:bceet/routers/application.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -39,12 +40,19 @@ class Login extends StatelessWidget {
                 TextField(
                   autofocus: false,
                   decoration: InputDecoration(
-                      labelText: "用户名",
-                      hintText: "请输入美丽华夏",
-                      prefixIcon: Icon(Icons.person)),
+                    labelText: "用户名",
+                    hintText: "请输入美丽华夏",
+                    prefixIcon: Icon(Icons.person),
+                    suffixIcon: new IconButton(
+                      icon: new Icon(Icons.clear, color: Colors.black45),
+                      onPressed: () {},
+                    ),
+                  ),
                 ),
                 TextField(
+                  autofocus: false,
                   decoration: new InputDecoration(
+                    labelText: "密码",
                     hintText: '请输入密码',
                     prefixIcon: Icon(Icons.lock),
                     suffixIcon: new IconButton(
@@ -60,16 +68,21 @@ class Login extends StatelessWidget {
                 Container(
                   width: ScreenUtil().setWidth(490.0),
                   child: Card(
-                    color: Colors.teal,
+                    color: Theme.of(context).primaryColor,
                     elevation: 15.0,
                     child: FlatButton(
-                        onPressed: null,
+                        onPressed: () {
+                          Application.router.navigateTo(context, "/home");
+                        },
                         child: Padding(
                           padding: EdgeInsets.all(10.0),
-                          child: Text(
-                            "登录",
-                            style:
-                                TextStyle(color: Colors.white, fontSize: ScreenUtil().setSp(36.0)),
+                          child: InkWell(
+                            child: Text(
+                              "登录",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: ScreenUtil().setSp(36.0)),
+                            ),
                           ),
                         )),
                   ),
