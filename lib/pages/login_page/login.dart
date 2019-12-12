@@ -17,33 +17,62 @@ class Login extends StatelessWidget {
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              //  mainAxisSize: MainAxisSize.max,
+              //  crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.all(20.0),
+                ),
                 Align(
                   alignment: Alignment.center,
                   child: Text(
                     "美丽华夏欢迎您！",
                     style: TextStyle(
                         color: Theme.of(context).primaryColor,
-                    fontSize: ScreenUtil().setSp(40.0),
-                      height: ScreenUtil().setHeight(5.0)
-                    ),
-                    
+                        fontSize: ScreenUtil().setSp(40.0),
+                        height: ScreenUtil().setHeight(5.0)),
                   ),
                 ),
-                TextField(
-                  autofocus: false,
-                  decoration: InputDecoration(
-                      labelText: "用户名",
-                      hintText: "请输入美丽华夏",
-                      prefix: Icon(Icons.person)),
+                Padding(
+                  padding: EdgeInsets.all(20.0),
                 ),
                 TextField(
                   autofocus: false,
                   decoration: InputDecoration(
                       labelText: "用户名",
                       hintText: "请输入美丽华夏",
-                      prefix: Icon(Icons.person)),
+                      prefixIcon: Icon(Icons.person)),
+                ),
+                TextField(
+                  decoration: new InputDecoration(
+                    hintText: '请输入密码',
+                    prefixIcon: Icon(Icons.lock),
+                    suffixIcon: new IconButton(
+                      icon: new Icon(Icons.clear, color: Colors.black45),
+                      onPressed: () {},
+                    ),
+                  ),
+                  obscureText: true,
+                ),
+                Padding(
+                  padding: EdgeInsets.all(30.0),
+                ),
+                Container(
+                  width: ScreenUtil().setWidth(490.0),
+                  child: Card(
+                    color: Colors.teal,
+                    elevation: 15.0,
+                    child: FlatButton(
+                        onPressed: null,
+                        child: Padding(
+                          padding: EdgeInsets.all(10.0),
+                          child: Text(
+                            "登录",
+                            style:
+                                TextStyle(color: Colors.white, fontSize: ScreenUtil().setSp(36.0)),
+                          ),
+                        )),
+                  ),
                 )
               ],
             ),
