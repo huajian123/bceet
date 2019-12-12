@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
         title: "美丽华夏",
         home:Login(),
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.teal,
         ),
       ),
     );

@@ -5,44 +5,51 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
-    return Container(
-      child: Scaffold(
-          body: Container(
-              color: Theme.of(context).primaryColor,
-              child: Center(
-                // 防止overFlow的现象
-                child: SafeArea(
-                  ///同时弹出键盘不遮挡
-                  child: SingleChildScrollView(
-                    child: Center(
-                      child: Container(
-                        width: ScreenUtil().setWidth(600.0),
-                        height: ScreenUtil().setHeight(900.0),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(color: Colors.white),
-                          borderRadius: BorderRadius.circular(10.0),
-                          // borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: Column(
-                          children: <Widget>[
-                            TextField(
-                              decoration: InputDecoration(
-                                  hintText: "请输入用户名", icon: Icon(Icons.person)),
-                            ),
-                            Padding(padding: EdgeInsets.all(10.0),),
-                            TextField(
-                              decoration: InputDecoration(
-                                hintText: "请输入密码",icon: Icon(Icons.person)
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
+    return Scaffold(
+      backgroundColor: Theme.of(context).primaryColor,
+      body: Center(
+        child: SafeArea(
+            child: SingleChildScrollView(
+                child: SizedBox(
+          width: ScreenUtil().setWidth(600.0),
+          height: ScreenUtil().setHeight(900.0),
+          child: Container(
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    "美丽华夏欢迎您！",
+                    style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                    fontSize: ScreenUtil().setSp(40.0),
+                      height: ScreenUtil().setHeight(5.0)
                     ),
+                    
                   ),
                 ),
-              ))),
+                TextField(
+                  autofocus: false,
+                  decoration: InputDecoration(
+                      labelText: "用户名",
+                      hintText: "请输入美丽华夏",
+                      prefix: Icon(Icons.person)),
+                ),
+                TextField(
+                  autofocus: false,
+                  decoration: InputDecoration(
+                      labelText: "用户名",
+                      hintText: "请输入美丽华夏",
+                      prefix: Icon(Icons.person)),
+                )
+              ],
+            ),
+          ),
+        ))),
+      ),
     );
   }
 }
