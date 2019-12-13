@@ -113,6 +113,9 @@ class MyDrawer extends StatelessWidget {
                       style: TextStyle(fontSize: _menuFontSize),
                     ),
                   ),
+                  Padding(
+                    padding: EdgeInsets.all(20.0),
+                  ),
                   Container(
                       width: ScreenUtil().setWidth(1.0),
                       height: ScreenUtil().setHeight(90.0),
@@ -139,6 +142,3 @@ class MyDrawer extends StatelessWidget {
     );
   }
 }
-
-/*
-,*/
