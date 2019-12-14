@@ -20,19 +20,32 @@ class HomePage extends StatelessWidget {
       drawer: Container(
         child: MyDrawer(),
       ),
+      bottomNavigationBar:
+      BottomNavigationBar(type: BottomNavigationBarType.fixed,items: [
+        BottomNavigationBarItem(
+            icon: Icon(
+              Icons.business,
+            ),
+            title: Text("公司概况")),
+        BottomNavigationBarItem(
+            icon: Icon(
+              Icons.business_center,
+              color: Theme.of(context).primaryColor,
+            ),
+            title: Text("业务范围")),
+        BottomNavigationBarItem(
+            icon: Icon(
+              Icons.language,
+            ),
+            title: Text("科技创新")),
+        BottomNavigationBarItem(
+            icon: Icon(
+              Icons.filter,
+            ),
+            title: Text("典型案例")),
+
+      ]),
       // floatingActionButton:
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.white,
-        shape: CircularNotchedRectangle(), // 底部导航栏打一个圆形的洞
-        child: Row(
-          children: [
-            IconButton(icon: Icon(Icons.home)),
-            SizedBox(), //中间位置空出
-            IconButton(icon: Icon(Icons.business)),
-          ],
-          mainAxisAlignment: MainAxisAlignment.spaceAround, //均分底部导航栏横向空间
-        ),
-      ),
     ));
   }
 }
@@ -63,8 +76,10 @@ class MyDrawer extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "董事长",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      "张 董 您 好",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: ScreenUtil().setSp(35.0)),
                     )
                   ],
                 )),
@@ -120,12 +135,13 @@ class MyDrawer extends StatelessWidget {
                       width: ScreenUtil().setWidth(1.0),
                       height: ScreenUtil().setHeight(90.0),
                       child: Padding(
-                        padding: EdgeInsets.only(left: 15.0,right: 15.0),
+                        padding: EdgeInsets.only(left: 15.0, right: 15.0),
                         child: RaisedButton(
                           color: Theme.of(context).primaryColor,
                           child: Text(
                             "退 出",
-                            style: TextStyle(fontSize: _menuFontSize,color: Colors.white),
+                            style: TextStyle(
+                                fontSize: _menuFontSize, color: Colors.white),
                           ),
                           elevation: 2.0,
                           onPressed: () {
