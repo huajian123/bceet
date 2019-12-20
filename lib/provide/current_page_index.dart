@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart' show ChangeNotifier;
 
-class BottomNavigationBarProvider with ChangeNotifier {
+class CurrentPageIndexProvider with ChangeNotifier {
   int _currentIndex = 0;
 
   int get currentIndex => _currentIndex;
 
-  set changePageIndex(index) {
+  set currentIndex(index) {
+    print(index);
     _currentIndex = index;
     notifyListeners();
   }

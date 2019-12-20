@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
+import 'package:provider/provider.dart';
 import 'pages/index_page.dart';
+import 'provide/current_page_index.dart';
 import 'provide/index.dart';
 import 'routers/routes.dart';
 import 'routers/application.dart';
@@ -21,14 +23,22 @@ class MyApp extends StatelessWidget {
     return Store.init(
         context: context,
         child: Container(
-          child: MaterialApp(
-            title: "美丽华夏",
-            home: IndexPage(),
-            onGenerateRoute: Application.router.generator,
-            theme: ThemeData(
-              primarySwatch: Colors.teal,
+          child: MultiProvider(
+            providers: [
+              ChangeNotifierProvider(builder: (_) => CurrentPageIndexProvider())
+            ],
+            child: MaterialApp(
+              title: "美丽华夏",
+              home: IndexPage(),
+              onGenerateRoute: Application.router.generator,
+              theme: ThemeData(
+                primarySwatch: Colors.teal,
+              ),
             ),
-          ),
+          )
+
+
+
         ));
   }
 }

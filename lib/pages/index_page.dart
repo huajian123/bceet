@@ -18,17 +18,15 @@ class IndexPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   // var provider = Provider.of<CurrentPageIndex>(context);
+    var provider = Provider.of<CurrentPageIndexProvider>(context);
 
     return Scaffold(
-        body: Center(
-          child: Text('14223'),
-        ),
+        body: pages[provider.currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           onTap: (index) {
-
+            provider.currentIndex = index;
           },
-          currentIndex: 0,
+          currentIndex: provider.currentIndex,
           type: BottomNavigationBarType.fixed,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
