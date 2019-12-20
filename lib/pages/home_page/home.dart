@@ -6,51 +6,15 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         child: Scaffold(
-      appBar: AppBar(
-        title: Text("美丽华夏"),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.share),
-            onPressed: () {
-              print("分享");
-            },
-          )
-        ],
+      body: Center(
+        child: Text('首页'),
       ),
-      drawer: Container(
-        child: MyDrawer(),
-      ),
-      bottomNavigationBar:
-      BottomNavigationBar(type: BottomNavigationBarType.fixed,items: [
-        BottomNavigationBarItem(
-            icon: Icon(
-              Icons.business,
-            ),
-            title: Text("公司概况")),
-        BottomNavigationBarItem(
-            icon: Icon(
-              Icons.business_center,
-              color: Theme.of(context).primaryColor,
-            ),
-            title: Text("业务范围")),
-        BottomNavigationBarItem(
-            icon: Icon(
-              Icons.language,
-            ),
-            title: Text("科技创新")),
-        BottomNavigationBarItem(
-            icon: Icon(
-              Icons.filter,
-            ),
-            title: Text("典型案例")),
-
-      ]),
       // floatingActionButton:
     ));
   }
 }
 
-class MyDrawer extends StatelessWidget {
+/*class MyDrawer extends StatelessWidget {
   final double _menuFontSize = ScreenUtil().setSp(30.0);
 
   @override
@@ -157,4 +121,4 @@ class MyDrawer extends StatelessWidget {
       ),
     );
   }
-}
+}*/

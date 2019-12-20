@@ -1,6 +1,7 @@
-import 'package:bceet/pages/login_page/login.dart';
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
+import 'pages/index_page.dart';
+import 'provide/index.dart';
 import 'routers/routes.dart';
 import 'routers/application.dart';
 
@@ -17,16 +18,18 @@ class MyApp extends StatelessWidget {
     Routes.configureRoutes(router);
     Application.router = router;
 
-    return Container(
-      child: MaterialApp(
-        title: "美丽华夏",
-        home: Login(),
-        onGenerateRoute: Application.router.generator,
-        theme: ThemeData(
-          primarySwatch: Colors.teal,
-        ),
-      ),
-    );
+    return Store.init(
+        context: context,
+        child: Container(
+          child: MaterialApp(
+            title: "美丽华夏",
+            home: IndexPage(),
+            onGenerateRoute: Application.router.generator,
+            theme: ThemeData(
+              primarySwatch: Colors.teal,
+            ),
+          ),
+        ));
   }
 }
 
