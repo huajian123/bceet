@@ -23,10 +23,6 @@ class MyApp extends StatelessWidget {
     return Store.init(
         context: context,
         child: Container(
-          child: MultiProvider(
-            providers: [
-              ChangeNotifierProvider(builder: (_) => CurrentPageIndexProvider())
-            ],
             child: MaterialApp(
               title: "美丽华夏",
               home: IndexPage(),
@@ -35,10 +31,6 @@ class MyApp extends StatelessWidget {
                 primarySwatch: Colors.teal,
               ),
             ),
-          )
-
-
-
         ));
   }
 }

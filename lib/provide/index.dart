@@ -3,6 +3,7 @@ import 'package:provider/provider.dart'
     show ChangeNotifierProvider, MultiProvider, Consumer, Provider;
 
 import 'currentIndex.dart';
+import 'current_page_index.dart';
 
 class Store {
   static BuildContext context;
@@ -11,7 +12,7 @@ class Store {
   static init({context, child}) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(builder: (_) => CurrentIndexProvide()),
+        ChangeNotifierProvider(builder: (_) => CurrentPageIndexProvider()),
       ],
       child: child,
     );

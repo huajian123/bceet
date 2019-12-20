@@ -18,7 +18,7 @@ class IndexPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<CurrentPageIndexProvider>(context);
+    CurrentPageIndexProvider provider = Provider.of<CurrentPageIndexProvider>(context);
 
     return Scaffold(
         body: pages[provider.currentIndex],
