@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:bceet/provide/current_page_index.dart';
 import 'home_page/home.dart';
@@ -19,7 +20,7 @@ class IndexPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     CurrentPageIndexProvider provider = Provider.of<CurrentPageIndexProvider>(context);
-
+    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Scaffold(
         body: pages[provider.currentIndex],
         bottomNavigationBar: BottomNavigationBar(
