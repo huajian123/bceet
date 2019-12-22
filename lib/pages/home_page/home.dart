@@ -7,14 +7,58 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         child: Scaffold(
-            body: Container(
-      child: Column(
-        children: <Widget>[
-          SwiperDiy(),
-          NewsList(),
-        ],
-      ),
-    )));
+            body: CustomScrollView(
+              //“预加载”的区域,0.0 为关闭预加载
+              cacheExtent: 1.0,
+              physics:AlwaysScrollableScrollPhysics(),//滑动阻尼效果
+              slivers: <Widget>[
+                SliverAppBar(
+                    title: Text("新闻中心"),
+                    expandedHeight: ScreenUtil().setHeight(350.0),
+                    floating: false,
+                    pinned: true,
+                    snap: false,
+                   flexibleSpace: FlexibleSpaceBar(
+                       collapseMode:CollapseMode.parallax ,
+                     background: SwiperDiy(),
+                   ),
+                    forceElevated: true,
+                    elevation: 5.0,
+                    centerTitle:true,
+
+                  // elevation:14.0
+                ),
+                SliverList(
+                    delegate: SliverChildListDelegate(
+                        [
+                          NewsItem(),
+                          NewsItem(),
+                          NewsItem(),
+                          NewsItem(),
+                          NewsItem(),
+                          NewsItem(),
+                          NewsItem(),
+                          NewsItem(),
+                          NewsItem(),
+                          NewsItem(),
+                          NewsItem(),
+                          NewsItem(),
+                        ]
+                    )
+                )
+              ],
+            )
+        )
+    );
+
+//            Container(
+//      child: Column(
+//        children: <Widget>[
+//          SwiperDiy(),
+//          NewsList(),
+//        ],
+//      ),
+//    )));
   }
 }
 
@@ -75,9 +119,7 @@ class NewsItem extends StatelessWidget {
                       Text(
                         '2019-12-134',
                         textAlign: TextAlign.left,
-                        style: TextStyle(
-                          color: Colors.black38
-                        ),
+                        style: TextStyle(color: Colors.black38),
                       )
                     ],
                   ),
