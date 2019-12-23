@@ -1,55 +1,54 @@
+import 'package:bceet/provide/tap_to_top.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    TapToTopModelProvider tapToTopModelProvider = Provider.of<TapToTopModelProvider>(context);
+    tapToTopModelProvider.init();
     return Container(
         child: Scaffold(
             body: CustomScrollView(
-              //“预加载”的区域,0.0 为关闭预加载
-              cacheExtent: 1.0,
-              physics:AlwaysScrollableScrollPhysics(),//滑动阻尼效果
-              slivers: <Widget>[
-                SliverAppBar(
-                    title: Text("新闻中心"),
-                    expandedHeight: ScreenUtil().setHeight(350.0),
-                    floating: false,
-                    pinned: true,
-                    snap: false,
-                   flexibleSpace: FlexibleSpaceBar(
-                       collapseMode:CollapseMode.parallax ,
-                     background: SwiperDiy(),
-                   ),
-                    forceElevated: true,
-                    elevation: 5.0,
-                    centerTitle:true,
+      //“预加载”的区域,0.0 为关闭预加载
+      cacheExtent: 1.0,
+      physics: AlwaysScrollableScrollPhysics(), //滑动阻尼效果
+      slivers: <Widget>[
+        SliverAppBar(
+          title: Text("新闻中心"),
+          expandedHeight: ScreenUtil().setHeight(350.0),
+          floating: false,
+          pinned: true,
+          snap: false,
+          flexibleSpace: FlexibleSpaceBar(
+            collapseMode: CollapseMode.parallax,
+            background: SwiperDiy(),
+          ),
+          forceElevated: true,
+          elevation: 5.0,
+          centerTitle: true,
 
-                  // elevation:14.0
-                ),
-                SliverList(
-                    delegate: SliverChildListDelegate(
-                        [
-                          NewsItem(),
-                          NewsItem(),
-                          NewsItem(),
-                          NewsItem(),
-                          NewsItem(),
-                          NewsItem(),
-                          NewsItem(),
-                          NewsItem(),
-                          NewsItem(),
-                          NewsItem(),
-                          NewsItem(),
-                          NewsItem(),
-                        ]
-                    )
-                )
-              ],
-            )
-        )
-    );
+          // elevation:14.0
+        ),
+        SliverList(
+            delegate: SliverChildListDelegate([
+          NewsItem(),
+          NewsItem(),
+          NewsItem(),
+          NewsItem(),
+          NewsItem(),
+          NewsItem(),
+          NewsItem(),
+          NewsItem(),
+          NewsItem(),
+          NewsItem(),
+          NewsItem(),
+          NewsItem(),
+        ]))
+      ],
+    )));
 
 //            Container(
 //      child: Column(

@@ -15,7 +15,6 @@ List<Widget> pages = <Widget>[
 ];
 
 class IndexPage extends StatelessWidget {
-  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
