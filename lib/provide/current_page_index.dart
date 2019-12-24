@@ -6,7 +6,6 @@ class CurrentPageIndexProvider with ChangeNotifier {
   int get currentIndex => _currentIndex;
 
   set currentIndex(index) {
-    print(index);
     _currentIndex = index;
     notifyListeners();
   }

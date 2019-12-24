@@ -4,6 +4,5 @@ import 'package:fluro/fluro.dart';
 
 Handler homeHander = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-  print("ceshi");
   return HomePage();
 });

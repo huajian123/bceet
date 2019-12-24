@@ -13,23 +13,17 @@ class TapToTopModelProvider with ChangeNotifier {
   bool get showTopBtn => _showTopBtn;
 
   TapToTopModelProvider(scrollController, {double height: 200}) {
-    print(1234);
-    print(scrollController);
     _scrollController = scrollController;
     _height = height;
   }
 
   init() {
-    print(12354);
     _scrollController.addListener(() {
       if (_scrollController.offset > _height && !_showTopBtn) {
         _showTopBtn = true;
-        print(12);
-        print(_scrollController.offset);
         notifyListeners();
       } else if (_scrollController.offset < _height && _showTopBtn) {
         _showTopBtn = false;
-        print(height);
         notifyListeners();
       }
     });
