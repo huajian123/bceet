@@ -106,7 +106,7 @@ class NewsItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      '继山东编导艺山东编。',
+                      '公司中标 “酒泉市祁连山国家公园山水林田湖草生态保护修复和综合治理工程项目”',
                       style: TextStyle(
                         fontSize: ScreenUtil().setSp(25.0),
                         color: Color(0xff111111),
@@ -115,7 +115,7 @@ class NewsItem extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text(
-                      '2019-12-134',
+                      '2019-12-14',
                       textAlign: TextAlign.left,
                       style: TextStyle(color: Colors.black38),
                     )
