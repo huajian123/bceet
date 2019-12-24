@@ -24,13 +24,13 @@ class _ProjectPageState extends State<ProjectPage>
         title: TabBar(
           tabs: <Widget>[
             Tab(
-              child: Text("页面1"),
+              child: Text("公司项目"),
             ),
             Tab(
-              child: Text("页面2"),
+              child: Text("业务范围"),
             ),
             Tab(
-              child: Text("页面3"),
+              child: Text("专家团队"),
             ),
           ],
           controller: _controller,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
+import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 import 'pages/index_page.dart';
 import 'provide/current_page_index.dart';
@@ -8,6 +9,7 @@ import 'routers/routes.dart';
 import 'routers/application.dart';
 
 void main() {
+  //debugRepaintRainbowEnabled = true;
   runApp(MyApp());
 }
 
