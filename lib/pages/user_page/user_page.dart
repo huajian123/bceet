@@ -43,54 +43,35 @@ class UserPage extends StatelessWidget {
             )),
         Container(
           child: Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                border: Border.all()
-              ),
-              child: ListView(
-                children: <Widget>[
-                  ListTile(
-                    leading: Icon(Icons.settings),
-                    title: Text("收藏"),
-                    trailing: Icon(Icons.keyboard_arrow_right),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.settings),
-                    title: Text("收藏"),
-                    trailing: Icon(Icons.keyboard_arrow_right),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.settings),
-                    title: Text("收藏"),
-                    trailing: Icon(Icons.keyboard_arrow_right),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.settings),
-                    title: Text("收藏"),
-                    trailing: Icon(Icons.keyboard_arrow_right),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.settings),
-                    title: Text("收藏"),
-                    trailing: Icon(Icons.keyboard_arrow_right),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.settings),
-                    title: Text("收藏"),
-                    trailing: Icon(Icons.keyboard_arrow_right),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.settings),
-                    title: Text("收藏"),
-                    trailing: Icon(Icons.keyboard_arrow_right),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.settings),
-                    title: Text("收藏"),
-                    trailing: Icon(Icons.keyboard_arrow_right),
-                  ),
-                ],
-              ),
+            child: ListView(
+              padding: EdgeInsets.only(top: 0),
+              children: <Widget>[
+                ListTile(
+                  leading: Icon(Icons.favorite_border),
+                  title: Text("收藏"),
+                  trailing: Icon(Icons.keyboard_arrow_right),
+                ),
+                ListTile(
+                  leading: Icon(Icons.brightness_2),
+                  title: Text("黑夜模式"),
+                  trailing: Icon(Icons.keyboard_arrow_right),
+                ),
+                ListTile(
+                  leading: Icon(Icons.color_lens),
+                  title: Text("色彩主题"),
+                  trailing: Icon(Icons.keyboard_arrow_right),
+                ),
+                ListTile(
+                  leading: Icon(Icons.settings),
+                  title: Text("设置"),
+                  trailing: Icon(Icons.keyboard_arrow_right),
+                ),
+                ListTile(
+                  leading: Icon(Icons.system_update),
+                  title: Text("监测更新"),
+                  trailing: Icon(Icons.keyboard_arrow_right),
+                ),
+              ],
             ),
           ),
         )
