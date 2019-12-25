@@ -6,6 +6,8 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
+  final newsList=[];
+
   @override
   Widget build(BuildContext context) {
     TapToTopModelProvider tapToTopModelProvider = Provider.of<TapToTopModelProvider>(context);
